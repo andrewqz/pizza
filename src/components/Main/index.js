@@ -43,9 +43,6 @@ export default class Main extends Component {
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: JSON.parse(event.target.value) })
-
-
-        console.log('infos', this.state);
     }
 
     render() {

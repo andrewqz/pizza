@@ -13,3 +13,95 @@ body {
 div {
   width: 100%;
 }
+
+/*#########################################################*/
+
+.item-list {
+    margin: 30px auto;
+}
+
+.item-list h3 {
+    padding: 10px 20px;
+}
+
+.item-list .points {
+    width: initial;
+    margin: 20px;
+    padding: 20px;
+    background: #ffd200;
+    color: rgba(0,0,0,0.5);
+}
+
+.item-list article {
+    background: #FFF;
+    border: 1px solid #ccc;
+    margin: 20px;
+    padding: 20px;
+}
+
+article strong {
+    padding: 0px 10px;
+}
+
+article p {
+    font-size: 12px;
+}
+
+.button-area {
+    text-align: center;
+}
+
+.button-area button {
+    border: 0;
+    background: #0996e9;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0px 10px;
+    width: 250px;
+    cursor: pointer;
+}
+
+.button-area button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.recommended {
+    width: auto;
+    margin: 10px 0px 0px;
+    padding: 10px;
+    background: yellow;    
+    border: 1px solid rgba(0,0,0,0.2);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.item-list .selected-pizza {
+    margin: 20px;
+    border: 0.55px dashed #999;
+    padding: 10px;
+    width: initial;
+    background: #fff;
+}
+
+.item-list .selected-pizza .recommended {
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
+}
+
+.item-list .selected-pizza h1 {
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: red;
+}
+
+.item-list .selected-pizza p {
+  padding: 5px 0px;
+}
