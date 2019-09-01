@@ -1,0 +1,11 @@
+header#main-header {
+    width: 100%;
+    background: #333;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+header#main-header h1 {
+    padding: 15px;
+}

@@ -1,0 +1,7 @@
+.item-list .selected-pizza {
+    margin: 20px;
+    border: 0.55px dashed #999;
+    padding: 10px;
+    width: initial;
+    background: #fff;
+}
