@@ -52,7 +52,7 @@ export default class Step2 extends Component {
                   <input
                     type="radio"
                     name="dough"
-                    onChange={this.props.handleChange}
+                    onChange={this.handleItem}
                     value={dough.id} />
                   <strong>{dough.name}</strong>
                 </div>
@@ -62,7 +62,7 @@ export default class Step2 extends Component {
           
           <div className="button-area">
             <button onClick={this.goBack}>Voltar</button>
-            <button type="submit">Avançar</button>
+            <button type="submit" disabled={!this.state.selected}>Avançar</button>
           </div>
         </form>
       </div>

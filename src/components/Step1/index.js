@@ -55,7 +55,7 @@ export default class Step1 extends Component {
                         ))
                     }
                     <div className="button-area">
-                        <button type="submit">Avançar</button>
+                        <button type="submit" disabled={!this.state.selected}>Avançar</button>
                     </div>
                 </form>
             </div>

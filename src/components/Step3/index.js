@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 
 export default class Step3 extends Component {
 
+  state = {
+    selected: false
+  }
+
+  handleItem = (e) => {
+    this.setState({ selected: true });
+    this.props.handleChange(e);
+  }
+
   goBack = (e) => {
     e.preventDefault();
     this.props.previousStep();
@@ -43,7 +52,7 @@ export default class Step3 extends Component {
                   <input
                     type="radio"
                     name="size"
-                    onChange={this.props.handleChange}
+                    onChange={this.handleItem}
                     value={size.id} />
                   <strong>{size.name}</strong>
                 </div>
@@ -53,7 +62,7 @@ export default class Step3 extends Component {
 
           <div className="button-area">
             <button onClick={this.goBack}>Voltar</button>
-            <button type="submit">Avançar</button>
+            <button type="submit" disabled={!this.state.selected}>Avançar</button>
           </div>
         </form>
       </div>
