@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { formatCurrency } from '../../util/format-currency';
 
-import './styles.css';
-
 export default class Order extends Component {
 
   goBack = (e) => {
@@ -26,6 +24,7 @@ export default class Order extends Component {
 
         <div className="selected-pizza">
           <h1>Itens selecionados</h1>
+          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
           <p>
             <strong>Recheio: </strong> {pizza.description}
           </p>
@@ -45,7 +44,6 @@ export default class Order extends Component {
             <strong>Total a pagar: </strong>
             <span>{formatCurrency(pizza.price)}</span>
           </p>
-          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
         </div>
 
           <div className="button-area">

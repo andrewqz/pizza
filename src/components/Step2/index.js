@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 
-import './styles.css';
-
 export default class Step2 extends Component {
+
+  state = {
+    selected: false
+  }
+
+  handleItem = (e) => {
+    this.setState({ selected: true });
+    this.props.handleChange(e);
+  }
+
 
   goBack = (e) => {
     e.preventDefault();
@@ -24,10 +32,14 @@ export default class Step2 extends Component {
 
         <div className="selected-pizza">
           <h1>Itens selecionados</h1>
+          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
           <p>
             <strong>Recheio: </strong> {pizza.description}
           </p>
-          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
+          <p className={pizza.isRecommended ? "show" : "hide"}>
+            <strong>Pontos Ganhos: </strong>
+            {infos.points}
+          </p>
         </div>
 
         <h3>Selecione a Massa:</h3>

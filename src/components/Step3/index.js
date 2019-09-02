@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import './styles.css';
-
 export default class Step3 extends Component {
 
   goBack = (e) => {
@@ -16,6 +14,7 @@ export default class Step3 extends Component {
 
   render() {
     const { infos } = this.props;
+    console.log(infos);
     const pizza = infos.data.find(response => (response.id === infos.filling));
     const dough = pizza.doughs.find(response => (response.id === infos.dough));
     const sizes = pizza.sizes;
@@ -25,14 +24,13 @@ export default class Step3 extends Component {
 
         <div className="selected-pizza">
           <h1>Itens selecionados</h1>
+          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
           <p>
             <strong>Recheio: </strong> {pizza.description}
           </p>
           <p>
-            <strong>Massa: </strong> 
-            {dough.name}
+            <strong>Massa: </strong> {dough.name}
           </p>
-          <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
         </div>
 
         <h3>Selecione o Tamanho:</h3>

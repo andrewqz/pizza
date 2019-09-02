@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { formatCurrency } from '../../util/format-currency';
 
-import './styles.css';
-
 export default class Step1 extends Component {
     state = {
-        recommended: false
+        recommended: false,
+        selected: false
     }
 
     handleItem = (e) => {
@@ -13,7 +12,8 @@ export default class Step1 extends Component {
         const rec = JSON.parse(e.target.attributes.getNamedItem('recommended').value);
 
         this.setState({ recommended: rec });
-
+        this.setState({ selected: true });
+        
         const points = rec ? 10 : 0;
 
         this.props.handlePoints(points);
