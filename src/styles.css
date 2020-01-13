@@ -20,6 +20,11 @@ div {
     margin: 30px auto;
 }
 
+.item-list .item-container {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 .item-list h3 {
     padding: 10px 20px;
 }
@@ -33,14 +38,45 @@ div {
 }
 
 .item-list article {
+    position: relative;
     background: #FFF;
     border: 1px solid #ccc;
     margin: 20px;
     padding: 20px;
+    min-height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.2);
+}
+
+.item-list article label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.item-list .item {
+  overflow: hidden;
+}
+
+.item-list .item input {
+  display: none;
+}
+
+.item-list .item input:checked + label {
+  border-radius: 10px;
+    box-shadow: 0px 0px 0px 4px red;
+}
+
+.item-list .item-photo img {
+  width: 100%;
 }
 
 article strong {
-    padding: 0px 10px;
+    padding: 0px;
 }
 
 article p {
@@ -104,4 +140,61 @@ article p {
 
 .item-list .selected-pizza p {
   padding: 5px 0px;
+}
+
+.item-list .pizza-size {
+  align-items: center;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  height: 160px;
+  justify-content: center;
+  position: relative;
+  width: 160px;
+  z-index: 0;
+  margin: 0px auto 20px;
+}
+
+.item-list .pizza-size::before,
+.item-list .pizza-size::after {
+  background: #ccc;
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+}
+.item-list .pizza-size::before {
+  height: 1px;
+  width: 150px;
+}
+.item-list .pizza-size::after {
+  height: 150px;
+  width: 1px;
+}
+
+.item-list .pizza-size h5 {
+  align-items: center;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  z-index: 1;
+}
+
+.item-list .pizza-dough {
+  display: flex;
+  justify-content: center;
+  line-height: 150px;
+}
+
+.item-list .item-description {
+  padding: 20px 0 0;
+  text-align: center;
+}
+
+.item-list .item-description strong > span {
+  font-weight: normal;
 }
