@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { formatCurrency } from '../../util/format-currency';
 
 export default class Step1 extends Component {
+
     state = {
         recommended: false,
         selected: false
@@ -13,7 +14,7 @@ export default class Step1 extends Component {
 
         this.setState({ recommended: rec });
         this.setState({ selected: true });
-        
+
         const points = rec ? 10 : 0;
 
         this.props.handlePoints(points);
@@ -32,28 +33,32 @@ export default class Step1 extends Component {
 
         return (
             <div className="item-list">
-
                 <div className={this.state.recommended ? "points show" : "points hide"}>Você ganhou pontos!</div>
 
                 <h3>Selecione o Recheio:</h3>
                 <form onSubmit={this.submitForm}>
-                    {
-                        pizzas.map((pizza) => (
-                            <article key={pizza.id} align="start">
-                                <div className="item">
-                                    <input
-                                        type="radio"
-                                        name="filling"
-                                        onChange={this.handleItem}
-                                        recommended={pizza.isRecommended.toString()}
-                                        value={pizza.id} />
-                                    <strong>{pizza.description}</strong> - <span>{formatCurrency(pizza.price)}</span>
-                                    <p>({pizza.ingredients})</p>
-                                    <div className={pizza.isRecommended ? "recommended show" : "recommended hide" }>Recomendação do Dia</div>
-                                </div>
-                            </article>
-                        ))
-                    }
+                    <div className="item-container">
+                        {
+                            pizzas.map((pizza) => (
+                                <article key={pizza.id} align="start">
+                                    <div className="item-photo"><img src={`./images/${pizza.img}`} /></div>
+                                    <div className="item">
+                                        <input
+                                            type="radio"
+                                            name="filling"
+                                            id={pizza.id}
+                                            onChange={this.handleItem}
+                                            recommended={pizza.isRecommended.toString()}
+                                            value={pizza.id} />
+                                        <label htmlFor={pizza.id}></label>
+                                        <strong>{pizza.description}</strong> - <span>{formatCurrency(pizza.price)}</span>
+                                        <p>({pizza.ingredients})</p>
+                                        <div className={pizza.isRecommended ? "recommended show" : "recommended hide"}>Recomendação do Dia</div>
+                                    </div>
+                                </article>
+                            ))
+                        }
+                    </div>
                     <div className="button-area">
                         <button type="submit" disabled={!this.state.selected}>Avançar</button>
                     </div>
@@ -63,5 +68,6 @@ export default class Step1 extends Component {
         );
 
     }
+
 
 }

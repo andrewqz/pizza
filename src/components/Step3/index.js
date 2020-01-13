@@ -44,22 +44,31 @@ export default class Step3 extends Component {
 
         <h3>Selecione o Tamanho:</h3>
         <form onSubmit={this.submitForm}>
-
+          <div className="item-container">
           {
             sizes.map((size) => (
               <article key={size.id} align="start">
                 <div className="item">
+
+                  <div className="pizza-size">
+                    <h5>{size.size} cm</h5>
+                  </div>
+                  <hr />
+                  <div className="item-description">
+                    <strong>{size.name} <span>- {size.slices} fatias</span></strong>
+                  </div>
                   <input
                     type="radio"
                     name="size"
                     onChange={this.handleItem}
+                    id={size.id}
                     value={size.id} />
-                  <strong>{size.name}</strong>
+                  <label htmlFor={size.id}></label>
                 </div>
               </article>
             ))
           }
-
+          </div>
           <div className="button-area">
             <button onClick={this.goBack}>Voltar</button>
             <button type="submit" disabled={!this.state.selected}>Avançar</button>

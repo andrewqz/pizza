@@ -44,22 +44,25 @@ export default class Step2 extends Component {
 
         <h3>Selecione a Massa:</h3>
         <form onSubmit={this.submitForm}>
-
+          <div className="item-container">
           {
             doughs.map((dough) => (
               <article key={dough.id} align="start">
                 <div className="item">
+                  <div className="pizza-dough"><strong>{dough.name}</strong></div>
                   <input
                     type="radio"
                     name="dough"
                     onChange={this.handleItem}
+                    id={dough.id}
                     value={dough.id} />
-                  <strong>{dough.name}</strong>
+                  <label htmlFor={dough.id}></label>
+                  
                 </div>
               </article>
             ))
           }
-          
+          </div>
           <div className="button-area">
             <button onClick={this.goBack}>Voltar</button>
             <button type="submit" disabled={!this.state.selected}>Avançar</button>
