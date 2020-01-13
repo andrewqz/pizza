@@ -22,15 +22,21 @@ const localData = [
         "sizes": [
             {
                 "id": 1,
-                "name": "Média (6 fatias)"
+                "name": "Média",
+                "size": 30,
+                "slices": 6,
             },
             {
                 "id": 2,
-                "name": "Grande (8 fatias)"
+                "name": "Grande",
+                "size": 32,
+                "slices": 8,
             },
             {
                 "id": 3,
-                "name": "Super (16 fatias)"
+                "name": "Super",
+                "size": 64,
+                "slices": 16,
             },
         ],
         "img": "calabresa.jpg"
@@ -62,11 +68,15 @@ const localData = [
         "sizes": [
             {
                 "id": 1,
-                "name": "Média (6 fatias)"
+                "name": "Média",
+                "size": 30,
+                "slices": 6,
             },
             {
                 "id": 2,
-                "name": "Grande (8 fatias)"
+                "name": "Grande",
+                "size": 32,
+                "slices": 8,
             }
         ],
         "img": "frango_catupiry.jpg"
@@ -94,11 +104,15 @@ const localData = [
         "sizes": [
             {
                 "id": 2,
-                "name": "Grande (8 fatias)"
+                "name": "Grande",
+                "size": 32,
+                "slices": 8,
             },
             {
                 "id": 3,
-                "name": "Super (16 fatias)"
+                "name": "Super",
+                "size": 64,
+                "slices": 16,
             },
         ],
         "img": "sensacao.jpg"
